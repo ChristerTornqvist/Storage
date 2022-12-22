@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index Parts</h1>
+<h1>Product inventory</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -18,11 +18,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th>
+            <th style="text-align: right">
                 @Html.DisplayNameFor(model => model.Count)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InventoryValue)
+            <th style="text-align: right">
+                @*
+                @Html.DisplayNameFor(model => model.InventoryValue)*@
+                Total value
             </th>
             <th></th>
         </tr>
@@ -37,10 +39,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
-                <td>
+                <td style="text-align: right">
                     @Html.DisplayFor(modelItem => item.Count)
                 </td>
-                <td>
+                <td style="text-align: right">
                     @Html.DisplayFor(modelItem => item.InventoryValue)
                 </td>
                 <td>
