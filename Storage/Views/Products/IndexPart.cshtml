@@ -4,7 +4,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Product inventory</h1>
+
+<form asp-action="Search">
+    <div class="input-group">
+<h1>Product <br />inventory</h1>
+        <label class="form-label m-2">Search</label>
+        <input type="text" name="searchString" class="form-control" placeholder="Product name"  style="max-height:35px; max-width:300px"/>
+        <div class="input-group-append">
+            <button type="submit" class="btn-outline-secondary">Find</button>
+        </div>
+    </div>
+</form>
+
 
 <p>
     <a asp-action="Create">Create New</a>

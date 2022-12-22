@@ -39,6 +39,21 @@ namespace Storage.Controllers
         //{
         //}
 
+        public async Task<IActionResult> Search(string searchString)
+        {
+            var model = await _context.Product
+                .Where(p => p.Name.StartsWith(searchString))
+                .Select(p => new ProductViewModel
+                {
+                    Name = p.Name,
+                    Price = p.Price,
+                    Count = p.Count,
+                    Id = p.Id,
+                    InventoryValue = p.Count * p.Price
+                }).ToListAsync();
+            return View("IndexPart", model);
+        }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
