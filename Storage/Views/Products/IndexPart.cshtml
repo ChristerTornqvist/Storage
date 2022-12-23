@@ -20,7 +20,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="max-width:750px">
     <thead>
         <tr>
             <th>
@@ -43,7 +43,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr >
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -56,7 +56,7 @@
                 <td style="text-align: right">
                     @Html.DisplayFor(modelItem => item.InventoryValue)
                 </td>
-                <td>
+                <td align="right">
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
