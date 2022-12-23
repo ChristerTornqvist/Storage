@@ -22,7 +22,6 @@ namespace Storage.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-       //     return View(await _context.Product.ToListAsync());
             var model = await _context.Product.Select(p => new ProductViewModel
             {
                 Name = p.Name,
@@ -34,10 +33,6 @@ namespace Storage.Controllers
 
             return View("IndexPart", model);
         }
-
-        //public async Task<IActionResult> IndexPart()
-        //{
-        //}
 
         public async Task<IActionResult> Search(string searchString)
         {

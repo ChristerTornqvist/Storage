@@ -13,7 +13,6 @@ namespace Storage.Data
             : base(options)
         {
         }
-
         public DbSet<Storage.Models.Product> Product { get; set; } = default!;
     }
 }
